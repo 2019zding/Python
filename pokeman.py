@@ -5,13 +5,14 @@ class Pokeman(object):
         self.hp = hp
         if listofAbilities == 'bur':
             self.listofAbilities = {
-            'deathhowl': random.randint(10,50)
-
+            'deathhowl': random.randint(10,50),
+            'heal': random.randint(-50,-10)
             }
         elif listofAbilities == 'tumbleweed':
                 self.listofAbilities = {
             'rollingdust': random.randint(10,50),
-            'squash': random.randint(5,20)
+            'squash': random.randint(5,20),
+            'heal': random.randint(-50,-10)
             }
         else:
             print('Not an option.')
@@ -28,12 +29,13 @@ class Pokeman(object):
             chosen_attack = self.listofAbilities[user_choice]
 
             if (self.hp > 1):
-                enempy.hp = enemy.hp - chosen_attack
-                print( "%s did %d damade to %s"%(self.name, chosen_attack, enemy.name))
-                print("%s HP left"%(enemy.name, enemy.hp))
+                enemy.hp = enemy.hp - chosen_attack
+                print( "%s did %d damage to %s"%(self.name, chosen_attack, enemy.name))
+                print("%s has %d left"%(enemy.name, enemy.hp))
                 if (enemy.hp > 1):
                     return enemy.battle(self)
-
+                else:
+                    print("%s is knocked out, %s won"%(enemy.name, self.name))
             else:
                 print("%s is knocked out, %s won"%(enemy.name, self.name))
 # abstracted form
