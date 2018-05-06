@@ -1,17 +1,17 @@
 class Queue():
-    # init
+    # initialization
     def __init__(self):
         self.items = []
 
 
-    # enqueue
+    # enqueue, which means adding an item to a queue
     def enqueue(self, items):
         return self.items.insert(0, items)
 
-    # dequeue
+    # dequeue, which means removing an item from a queue
     def dequeue(self):
         return self.items.pop()
-    # show all
+    # showing all of the items in the list
     def list(self):
         for x in self.items:
             print(x)
