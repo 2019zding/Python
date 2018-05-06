@@ -5,14 +5,18 @@ def binarySearch(arr, n, lowerHalf=0, upperHalf=None):
     mid = arr[len(arr)//2]
 
     if n == arr[mid]:
+        # if mid is the value of n
         return mid
     elif  n < arr[mid]:
+        # if n is larger than mid
         upperHalf = mid - 1
         return upperHalf
     elif n > arr[mid]:
+        # if n is less than mid
         lowerHalf = mid + 1
         return lowerHalf
     else:
+        # if n is not in the array
         print('Error')
 
     # debug make sure it is the middle of an array
