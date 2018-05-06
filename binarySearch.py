@@ -1,9 +1,20 @@
 # Binary binarySearch
 # Takes in an array, and a number to look for
-def binarySearch(arr, n):
+def binarySearch(arr, n, lowerHalf=0, upperHalf=None):
     # find middle of array
     mid = arr[len(arr)//2]
-    print(mid)
+
+    if n == arr[mid]:
+        return mid
+    elif  n < arr[mid]:
+        upperHalf = mid - 1
+        return upperHalf
+    elif n > arr[mid]:
+        lowerHalf = mid + 1
+        return lowerHalf
+    else:
+        print('Error')
+
     # debug make sure it is the middle of an array
 
     # TO DO:
@@ -13,4 +24,4 @@ def binarySearch(arr, n):
 
 
 arr = [1,2,3,4,5]
-binarySearch(arr,5)
+binarySearch(arr, 5)
