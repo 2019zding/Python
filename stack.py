@@ -43,7 +43,7 @@ class Stack:
             if x == missing:
                 print(x)
 
-# bubble sort
+# selection sort
     def b_sort(self):
         n = len(self.items)
         for x in range(n):
