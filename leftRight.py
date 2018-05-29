@@ -14,16 +14,12 @@ def balance(left, right):
         else:
             rightWeight = rightWeight + 3
 
-        if (leftWeight > rightWeight):
-            print('Left')
-        elif (rightWeight > leftWeight):
-            print('Right')
-        else:
-            print('Balance')
-
-
-balance('!!','??')
-# ! = 2
-# ? = 3
-
-  
+    if (leftWeight > rightWeight):
+        print('Left')
+        return 'Left'
+    elif (rightWeight > leftWeight):
+        print('Right')
+        return 'Right'
+    else:
+        print('Balance')
+        return 'Balance'
